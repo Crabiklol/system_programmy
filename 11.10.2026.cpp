@@ -22,7 +22,7 @@ public:
 
     
     void printInfo() const {
-        cout << "Товар: " << name << " | Цена: " << price << " руб." << endl;
+        cout << "Товар: " << name << " Цена: " << price << " руб." << endl;
     }
 
     
@@ -95,7 +95,7 @@ public:
 
     
     void printAllItems() const {
-        cout << "\n=== Содержимое склада ===" << endl;
+        cout << "\n Содержимое склада " << endl;
         int count = 0;
         for (int i = 0; i < MAX_CAPACITY; i++) {
             if (items[i] != nullptr) {
@@ -105,7 +105,7 @@ public:
             }
         }
         cout << "Всего товаров на складе: " << count << endl;
-        cout << "========================\n" << endl;
+        
     }
 
     
@@ -126,12 +126,12 @@ public:
 int main() {
     setlocale(LC_ALL, "Russian");
 
-    cout << "=== Демонстрация управления памятью ===\n" << endl;
+    cout << " Демонстрация управления памятью n" << endl;
 
    
     Warehouse warehouse;
 
-    cout << "\n--- Добавление товаров на склад ---" << endl;
+    cout << "\n Добавление товаров на склад " << endl;
 
     
     warehouse.addItem(new Item("Ноутбук", 75000.0));
@@ -141,18 +141,18 @@ int main() {
 
     warehouse.printAllItems();
 
-    cout << "\n--- Удаление товара по имени ---" << endl;
+    cout << "\n Удаление товара по имени " << endl;
     warehouse.removeItemByName("Смартфон");
     warehouse.printAllItems();
 
-    cout << "\n--- Добавление нового товара ---" << endl;
+    cout << "\n Добавление нового товара " << endl;
     warehouse.addItem(new Item("Клавиатура", 5000.0));
     warehouse.printAllItems();
 
-    cout << "\n--- Попытка удалить несуществующий товар ---" << endl;
+    cout << "\n Попытка удалить несуществующий товар " << endl;
     warehouse.removeItemByName("Наушники");
 
-    cout << "\n--- Завершение программы ---" << endl;
+    cout << "\n Завершение программы " << endl;
     cout << "Деструктор Warehouse автоматически очистит оставшиеся товары.\n" << endl;
 
     return 0;
